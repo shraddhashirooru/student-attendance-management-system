@@ -1,70 +1,237 @@
-# Getting Started with Create React App
+📘 Student Attendance Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User Guide & Execution Steps
 
-## Available Scripts
+1️⃣ Download Project from Google Drive
 
-In the project directory, you can run:
+Open the Google Drive link provided.
 
-### `npm start`
+Click Download.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Wait for the download to complete.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2️⃣ Extract the Project (If ZIP File)
 
-### `npm test`
+Go to the downloaded .zip file.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Right-click → Extract All.
 
-### `npm run build`
+Click Extract.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A new folder will be created (example):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+student-management-system/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3️⃣ Open Project in Visual Studio Code
 
-### `npm run eject`
+Open Visual Studio Code.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Click File → Open Folder.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Select the project folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4️⃣ Open Terminal in VS Code
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+In Visual Studio Code:
 
-## Learn More
+Press:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ctrl + `
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+(backtick key below Esc)
 
-### Code Splitting
+OR
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Click Terminal → New Terminal
 
-### Analyzing the Bundle Size
+5️⃣ Install Required Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+This step is required only once.
 
-### Making a Progressive Web App
+In the terminal, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+npm install
 
-### Advanced Configuration
+✔ It installs all required React dependencies.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+6️⃣ Run the Project
 
-### Deployment
+After installation completes, run:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+npm start
 
-### `npm run build` fails to minify
+✔ The browser will open automatically
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+✔ If not, open browser and go to:
+
+http://localhost:3000
+
+7️⃣ Login Details
+
+Use the following credentials to log in:
+
+Username: admin
+Password: admin
+
+8️⃣ After Login – Application Overview
+
+After successful login, the Student Attendance Dashboard will be displayed.
+
+🔹 Sections Available in the Application
+
+🟪 1. Add Student Section
+
+Purpose:
+
+To add new students to the system.
+
+Fields:
+
+Student Name
+
+USN
+
+Rules:
+
+Duplicate USN is not allowed
+
+Shows alert if USN already exists
+
+Note: This application uses browser LocalStorage to store student and attendance data.
+When the project is run for the first time on a new system, no student data will be visible.
+Please add at least one student using the Add Student section to view and access other features such as:
+
+Today’s Attendance
+
+Student List
+
+Student Details
+
+Subject-wise Attendance and Calendar View 
+
+🟦 2. Today’s Attendance Section (Top of Page)
+
+Purpose:
+
+To mark daily attendance for students.
+
+Features:
+
+Select subject from dropdown
+
+Select date (default = today)
+
+Student list sorted alphabetically
+
+Buttons:
+
+Present (Green)
+
+Absent (Red)
+
+No Class (Gray – not counted in attendance)
+
+Displayed Information:
+
+Student Name
+
+USN (University Seat Number)
+
+
+🟨 3. Search Bar
+
+Purpose:
+
+To quickly find students.
+
+Search by:
+
+Student Name
+
+USN
+
+🟩 4. Student List Section
+
+Purpose:
+
+To view all students.
+
+Features:
+
+Alphabetically sorted list
+
+Click anywhere on a student card to view details
+
+Delete button to remove student
+
+🟦 5. Student Details Section
+
+Displayed when a student is selected.
+
+Includes:
+
+Subject-wise attendance percentage
+
+Overall attendance percentage
+
+Progress tubes for each subject
+
+📅 6. Attendance Calendar View
+
+Access:
+
+Click on any subject tube
+
+Features:
+
+Monthly calendar
+
+Year selection
+
+Colored dots under dates:
+
+🟢 Green → Present
+
+🔴 Red → Absent
+
+⚪ Gray → No Class
+
+Large, centered date display
+
+9️⃣ Data Storage
+
+All data is stored using Browser LocalStorage
+
+No backend/server required
+
+Data persists even after page refresh
+
+🔐 Logout & Re-Login
+
+Refreshing the page will require login again
+
+Login credentials remain the same
+
+🛠️ Technologies Used
+
+Frontend: React.js
+
+Styling: Custom CSS (Responsive & Premium UI)
+
+Storage: LocalStorage
+
+Tools: Visual Studio Code, Node.js, npm
+
+✅ Conclusion
+
+This project demonstrates:
+
+Complete CRUD functionality
+
+Subject-wise attendance tracking
+
+Calendar-based visualization
+
+Responsive and user-friendly UI
+
+Real-world attendance management workflow

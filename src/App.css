@@ -1,38 +1,800 @@
-.App {
+/* ===============================
+   GLOBAL APP
+================================ */
+.app {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  background-color: #f7f7f7;
+  min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ===============================
+   Headings
+================================ */
+h2 {
+  margin-bottom: 15px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h3 {
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   Login Page
+================================ */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Glass Card */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 32px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+  text-align: center;
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+  box-sizing: border-box; 
+}
+
+
+/* Title */
+.login-title {
+  white-space: nowrap;   
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #e0e0e0;
+  margin-bottom: 22px;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.95);
+  color: #333;
+
+  text-align: left;        
+  box-sizing: border-box;  
+
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+
+.login-input:focus {
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.45);
+  transform: scale(1.02);
+}
+
+/* Login Button */
+.login-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+
+  color: #4a148c;
+  background: linear-gradient(135deg, #ffeb3b, #ffc107);
+
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.login-button:active {
+  transform: scale(0.97);
+}
+
+/* Error */
+.login-error {
+  margin-top: 12px;
+  color: #ff5252;
+  font-size: 14px;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Mobile */
+@media (max-width: 480px) {
+  .login-card {
+    margin: 0 15px;
+  }
+}
+
+
+/* ===============================
+   BASE PANEL
+================================ */
+.panel {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ===============================
+   ADD STUDENT 
+================================ */
+.add-student {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 14px;
+  padding: 25px 20px;
+  margin-bottom: 30px;
+
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-student:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.38);
+}
+
+/* ADD STUDENT TITLE */
+.add-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+/* ADD STUDENT INPUTS */
+.add-student input {
+  width: 100%;
+  max-width: 420px;
+  margin: 12px auto;
+  display: block;
+
+  padding: 12px 14px;
+  font-size: 16px;
+
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.96);
+  color: #333;
+
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.add-student input:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  transform: scale(1.01);
+}
+
+/* ADD STUDENT BUTTON */
+.add-student button {
+  margin-top: 15px;
+  padding: 12px 20px;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+
+  color: #4a148c;
+  background: linear-gradient(135deg, #ffeb3b, #ffc107);
+
+  transition: all 0.25s ease;
+}
+
+.add-student button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.add-student button:active {
+  transform: scale(0.97);
+}
+
+/* ===============================
+   ADD STUDENT – MOBILE OPTIMIZATION
+================================ */
+/* ===============================
+   FIX INPUT TEXT ALIGNMENT (MOBILE)
+================================ */
+/* ===============================
+   FIX INPUT EDGE SPACING (MOBILE)
+================================ */
+@media (max-width: 600px) {
+  .add-student input {
+    box-sizing: border-box;     /* 👈 CRITICAL */
+    width: calc(100% - 4px);    /* 👈 creates inner gap */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .add-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .add-student input {
+    max-width: 100%;           /* full width on mobile */
+    font-size: 17px;
+    padding: 14px;
+  }
+
+  .add-student button {
+    width: 100%;               /* full-width button */
+    font-size: 18px;
+    padding: 14px;
+    margin-top: 14px;
+    border-radius: 12px;
+  }
+}
+
+
+/* ===============================
+   SEARCH BAR
+================================ */
+
+.search-panel {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 25px 0 35px;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 520px;          
+  padding: 18px 22px;
+
+  font-size: 20px;          
+  font-weight: 500;
+
+  border-radius: 16px;
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+  color: #333;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+
+  transition: all 0.35s ease;
+}
+
+/* Placeholder */
+.search-input::placeholder {
+  color: #9e9e9e;
+  font-size: 16px;
+}
+
+/* Focus effect */
+.search-input:focus {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 5px rgba(102, 126, 234, 0.45),
+    0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .search-input {
+    font-size: 17px;
+    padding: 16px 18px;
+    max-width: 92%;
+  }
+}
+
+/* ===============================
+   STUDENT LIST
+================================ */
+
+.student-list {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin-bottom: 35px;
+
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+
+.student-list h2 {
+  font-size: 26px;
+  margin-bottom: 22px;
+  color: #ffffff;
+  letter-spacing: 0.6px;
+}
+
+
+/* ===============================
+   STUDENT ROW
+================================ */
+
+.student-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+
+  padding: 14px 16px;
+  margin-bottom: 12px;
+
+  background: #ffffff;
+  border-radius: 12px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.student-row:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+.student-row:active {
+  transform: scale(0.98);
+}
+
+
+/* STUDENT NAME */
+.student-info strong {
+  font-size: 19px;
+  font-weight: 600;
+  color: #2c2c2c;
+}
+
+/* USN */
+.student-info .muted {
+  font-size: 15px;
+  margin-top: 4px;
+  color: #555;
+}
+
+/* DELETE BUTTON */
+.delete {
+  background: linear-gradient(135deg, #ff5252, #d32f2f);
+  font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.delete:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+.muted {
+  color: #e9da0b;
+  font-size: 13px;
+}
+
+/* ===============================
+   TODAY'S ATTENDANCE – SUBJECT SELECT
+================================ */
+
+/* ===============================
+   TODAY'S ATTENDANCE – PREMIUM
+================================ */
+.attendance-panel {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+.attendance-panel h2 {
+  color: #ffffff;
+}
+
+.attendance-panel select {
+  width: 100%;
+  max-width: 320px;
+  padding: 12px 16px;
+
+  font-size: 18px;
+  font-weight: 600;
+
+  border-radius: 12px;
+  border: none;
+  outline: none;
+
+  background: #ffffff;
+  color: #333;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+/* CENTER ALIGN */
+.attendance-panel .subject-select-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
+
+.attendance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;          
+  gap: 8px;
+}
+
+
+.attendance-row button {
+  min-width: 90px;        
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  margin-left: 6px;
+}
+
+.attendance-usn {
+  font-size: 13px;
+  color: #e0e0e0;
+  margin-top: 2px;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+button {
+  padding: 5px 10px;
+  margin-left: 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ===============================
+   PRESENT BUTTON – HOVER EFFECT
+================================ */
+.present {
+  background-color: #2e7d32; /* normal green */
+  color: #ffffff;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.present:hover {
+  background-color: #1b5e20; /* 👈 DARK GREEN */
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.45);
+  transform: translateY(-1px);
+}
+
+.present:active {
+  background-color: #388e3c; /* 👈 LIGHT GREEN */
+  transform: scale(0.96);
+}
+
+
+/* ===============================
+   ABSENT BUTTON – HOVER EFFECT
+================================ */
+.absent {
+  background-color: #c62828; /* normal red */
+  color: #ffffff;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.absent:hover {
+  background-color: #8e0000; /* 👈 DARK RED */
+  box-shadow: 0 6px 16px rgba(198, 40, 40, 0.45);
+  transform: translateY(-1px);
+}
+
+.absent:active {
+  background-color: #e53935; /* 👈 LIGHT RED */
+  transform: scale(0.96);
+}
+
+
+.delete {
+  background-color: #555;
+  font-size: 13px;
+}
+
+/* ===============================
+   STUDENT PROFILE
+================================ */
+.student-profile p {
+  font-size: 15px;
+  margin: 6px 0;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+  .search-input {
+    font-size: 16px;
+    max-width: 90%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .student-row,
+  .attendance-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .add-title {
+    font-size: 24px;
   }
 }
+/* ===============================
+   STUDENT DETAILS
+================================ */
+.student-details {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffeb3b;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* SUBJECT TABS */
+.subject-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #2a5298;
+  font-weight: bold;
+}
+
+/* PROGRESS SECTION */
+.progress-section {
+  margin: 20px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #00c853, #64dd17);
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+/* OVERALL BAR */
+.overall {
+  margin-top: 25px;
+}
+
+.overall-bar {
+  height: 20px;
+}
+
+.overall-fill {
+  background: linear-gradient(135deg, #ffeb3b, #ffc107);
+}
+
+/* ===============================
+   SUBJECT TUBES
+================================ */
+.subject-tubes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.tube-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tube-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.tube-card.active {
+  outline: 2px solid #ffeb3b;
+}
+
+.tube-label {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.tube-bar {
+  width: 100%;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tube-fill {
+  height: 100%;
+  background: linear-gradient(135deg, #00e676, #64dd17);
+  transition: width 0.4s ease;
+}
+
+/* ===============================
+   CALENDAR GRID (GOOGLE STYLE)
+================================ */
+.calendar-card {
+  margin-top: 15px;
+}
+
+.calendar-header,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-header {
+  margin-bottom: 8px;
+  color: #ddd;
+  font-weight: bold;
+  text-align: center;
+}
+
+.calendar-grid {
+  gap: 8px;
+}
+
+.calendar-cell {
+  height: 90px;                     /* bigger cell */
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;              /* center horizontally */
+  justify-content: center;          /* center vertically */
+}
+
+/* DATE NUMBER – BIG & CENTERED */
+.calendar-date {
+  font-size: 18px;                  
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+/* DOT */
+.calendar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+
+.present-dot {
+  background: #00e676;
+}
+
+.absent-dot {
+  background: #ff5252;
+}
+
+/* ===============================
+   MONTH SELECTOR
+================================ */
+.month-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.month-selector select {
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.year-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.noclass {
+  background-color: #9e9e9e;
+  color: #ffffff;
+}
+
+.noclass:hover {
+  background-color: #757575;
+}
+
+/* NO CLASS DOT (GRAY) */
+.noclass-dot {
+  background-color: #bdbdbd;
+}
+
