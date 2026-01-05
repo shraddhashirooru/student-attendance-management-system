@@ -70,6 +70,8 @@ After successful login, the Student Attendance Dashboard will be displayed.
 
 #### Add Student Section
 
+<img width="607" height="150" alt="Screenshot (1757) (1)" src="https://github.com/user-attachments/assets/6a200674-0c3a-451a-86df-d0c6843b5c1d" />
+
 Purpose: 
 To add new students to the system.
 
@@ -85,6 +87,8 @@ Please add at least one student using the Add Student section to view and access
 Today’s Attendance, Student List, Student Details and Subject-wise Attendance and Calendar View 
 
 #### Today’s Attendance Section (Top of Page)
+
+<img width="1146" height="578" alt="Today's Attedance section screenshot" src="https://github.com/user-attachments/assets/44287be6-73ce-4f52-b892-b34c9a3cb6a3" />
 
 Purpose: To mark daily attendance for students.
 
@@ -112,6 +116,8 @@ USN (University Seat Number)
 
 #### Search Bar
 
+<img width="605" height="445" alt="Screenshot (1757)(2)" src="https://github.com/user-attachments/assets/7cd28e10-38e9-4d42-b0c2-6713159f3577" />
+
 Purpose: To quickly find students.
 
 Search by:
@@ -133,6 +139,7 @@ Click anywhere on a student card to view details
 Delete button to remove student
 
 #### Student Details Section
+<img width="642" height="254" alt="Screenshot (1759)(2)" src="https://github.com/user-attachments/assets/38caf256-484f-4bd7-9fec-e1a5233bfb84" />
 
 Displayed when a student is selected.
 
@@ -145,6 +152,7 @@ Overall attendance percentage
 Progress tubes for each subject
 
 #### Attendance Calendar View
+<img width="1013" height="581" alt="Screenshot (1759)" src="https://github.com/user-attachments/assets/d5fb5142-4d50-40ec-93d8-18690e8ee3fa" />
 
 Access: Click on any subject tube
 
