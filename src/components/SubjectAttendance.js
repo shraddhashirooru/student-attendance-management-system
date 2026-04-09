@@ -56,36 +56,43 @@ export default function SubjectAttendance({
       {/* STUDENT LIST */}
       {[...students]
         .sort((a, b) => a.name.localeCompare(b.name))
-        .map(student => (
-          <div key={student.id} className="attendance-row">
+        .map(student => {
+          const currentStatus =
+            student.attendance?.[selectedSubject]?.[selectedDate];
+          return(
+            <div key={student.id} className="attendance-row">
+              <div>
+                <strong>{student.name}</strong>
+                <div className="attendance-usn">{student.usn}</div>
+              </div>
             <div>
-              <strong>{student.name}</strong>
-              <div className="attendance-usn">{student.usn}</div>
-            </div>
-          <div>
-              <button
-                className="present"
-                onClick={() => markAttendance(student.id, "Present")}
-              >
-                Present
-              </button>
+                <button
+                  className="present"
+                  disabled={currentStatus === "Present"}
+                  onClick={() => markAttendance(student.id, "Present")}
+                >
+                  Present
+                </button>
 
-              <button
-                className="absent"
-                onClick={() => markAttendance(student.id, "Absent")}
-              >
-                Absent
-              </button>
+                <button
+                  className="absent"
+                  disabled={currentStatus === "Absent"}
+                  onClick={() => markAttendance(student.id, "Absent")}
+                >
+                  Absent
+                </button>
 
-              <button
-                className="noclass"
-                onClick={() => markAttendance(student.id, "No Class")}
-              >
-                No Class
-              </button>
+                <button
+                  className="noclass"
+                  disabled={currentStatus === "No Class"}
+                  onClick={() => markAttendance(student.id, "No Class")}
+                >
+                  No Class
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+           );
+        })}
     </div>
-  );
+);
 }
